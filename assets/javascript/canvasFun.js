@@ -15,6 +15,12 @@ function draw(e) {
     // stop the function running when mouse down in not used
     if(!isDrawing) return;
     console.log(e);
+    ctx.beginPath();
+        // start from point 
+    ctx.moveTo(lastX, lastY);
+    // go to point
+    ctx.lineTo(e.offsetX, e.offsetY);
+    ctx.stroke();
 }
 canvas.addEventListener("mousemove", draw);
 canvas.addEventListener("mousedown",() => isDrawing = true);
