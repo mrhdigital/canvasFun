@@ -21,6 +21,9 @@ function draw(e) {
     // go to point
     ctx.lineTo(e.offsetX, e.offsetY);
     ctx.stroke();
+    lastX = e.offsetX;
+    lastY = e.offsetY;
+
 }
 canvas.addEventListener("mousemove", draw);
 canvas.addEventListener("mousedown",() => isDrawing = true);
