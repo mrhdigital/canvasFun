@@ -17,6 +17,7 @@ function draw(e) {
     if(!isDrawing) return;
     console.log(e);
     ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
+    ctx.lineWidth = hue;
     ctx.beginPath();
         // start from point 
     ctx.moveTo(lastX, lastY);
