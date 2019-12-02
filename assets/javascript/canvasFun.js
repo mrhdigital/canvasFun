@@ -7,7 +7,8 @@ canvas.height = window.innerHeight;
 ctx.strokeStyle = "BASA55";
 ctx.lineJoin = "round";
 ctx.lineCap = "round";
-ctx.lineWidth = 60;
+ctx.lineWidth = 70;
+//ctx.globalCompositeOperation = 'difference';
 let isDrawing = false;
 let lastX = 0;
 let lastY = 0;
@@ -18,7 +19,7 @@ function draw(e) {
     if(!isDrawing) return;
     console.log(e);
     ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
-    ctx.lineWidth = hue;
+   // ctx.lineWidth = hue;
     ctx.beginPath();
         // start from point 
     ctx.moveTo(lastX, lastY);
@@ -33,7 +34,7 @@ function draw(e) {
     if(hue >= 360) {
         hue = 0;
     }
-    if (ctx.lineWidth >= 60 || ctx.lineWidth <= 1) {
+    if (ctx.lineWidth >= 70 || ctx.lineWidth <= 1) {
         direction = !direction;
     }
      if (direction) {
